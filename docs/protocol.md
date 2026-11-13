@@ -14,7 +14,10 @@ OpenATK uses direct USB Human Interface Device (HID) vendor reports to exchange 
   ```
 - **Checksum Calculation:**
   The checksum is stored in wire byte 16 (`payload[15]`). The sum of all 17 wire bytes modulo 256 equals `0x55`:
-  $$\text{checksum} = \left(0x55 - \left(\text{Report\_ID} + \sum_{i=0}^{14} \text{payload}[i]\right)\right) \pmod{256}$$
+
+  ```math
+  \text{checksum} = \left(0x55 - \left(\text{Report\_ID} + \sum_{i=0}^{14} \text{payload}[i]\right)\right) \pmod{256}
+  ```
 
 ---
 

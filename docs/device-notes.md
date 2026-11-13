@@ -46,9 +46,11 @@ OpenATK dynamically detects and supports gaming mice across the ATK, VXE, and VG
 - **Transport Mechanism:** USB HID Feature/Output reports via Report ID `0x08`.
 - **Wire Report Length:** Exactly 17 bytes (`[Report ID (1 byte), Payload (16 bytes)]`).
 - **Configuration Collection:** Interface 1, `Usage Page 0xFF02`, `Usage 0x0002` (`Col05`).
-- **Checksum Invariant:** 
-  $$\left(0x55 - \left(\text{Report\_ID} + \sum_{i=0}^{14} \text{payload}[i]\right)\right) \pmod{256}$$
-  The sum of all 17 wire bytes modulo 256 is strictly equal to `0x55`.
+- **Checksum Invariant:** The sum of all 17 wire bytes modulo 256 is strictly equal to `0x55`:
+
+  ```math
+  \left(0x55 - \left(\text{Report\_ID} + \sum_{i=0}^{14} \text{payload}[i]\right)\right) \pmod{256}
+  ```
 
 ---
 
