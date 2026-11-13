@@ -1,0 +1,33 @@
+# ==============================================================================
+# Cross-Platform Standalone Build Configuration
+# ==============================================================================
+
+# Windows (MSVC 64-bit & 32-bit): Statically links CRT (LIBCMT)
+# Eliminates dependency on vcruntime140.dll / msvcp140.dll
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+[target.i686-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+# Windows (MinGW/GNU 64-bit & 32-bit): Statically links libgcc, libstdc++, winpthread
+[target.x86_64-pc-windows-gnu]
+rustflags = ["-C", "link-arg=-static"]
+
+[target.i686-pc-windows-gnu]
+rustflags = ["-C", "link-arg=-static"]
+
+# Linux MUSL (x86_64 & aarch64): 100% static ELF binaries
+# Runs on ANY Linux distribution regardless of glibc version (Ubuntu, Debian, Fedora, Arch, Alpine, etc.)
+[target.x86_64-unknown-linux-musl]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+[target.aarch64-unknown-linux-musl]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+# Linux GLIBC (x86_64 & aarch64): Links with origin relative paths
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-C", "link-arg=-Wl,-rpath,$ORIGIN"]
+
+[target.aarch64-unknown-linux-gnu]
+rustflags = ["-C", "link-arg=-Wl,-rpath,$ORIGIN"]

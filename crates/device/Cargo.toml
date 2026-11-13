@@ -1,0 +1,12 @@
+[package]
+name = "atk-device"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+atk-protocol.workspace = true
+atk-hid.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+

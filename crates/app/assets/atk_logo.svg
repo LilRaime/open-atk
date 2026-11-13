@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1024" height="1024"
+     viewBox="0 0 1024 1024">
+
+  <title>ATK Logo</title>
+
+  <rect
+    width="1024"
+    height="1024"
+    rx="190"
+    fill="#000000"
+  />
+
+  <g fill="#FFFFFF">
+
+    <!-- A -->
+    <path d="
+      M132 620
+      L270 380
+      L319 380
+      L457 620
+      L389 620
+      L294 455
+      L200 620
+      Z
+    "/>
+
+    <!-- T -->
+    <path d="
+      M394 380
+      H650
+      V430
+      H551
+      V620
+      H493
+      V430
+      H424
+      Z
+    "/>
+
+    <!-- K -->
+    <path d="
+      M684 380
+      H742
+      V482
+      L846 380
+      H928
+      L805 484
+      L928 620
+      H847
+      L742 520
+      V620
+      H684
+      Z
+    "/>
+
+  </g>
+</svg>

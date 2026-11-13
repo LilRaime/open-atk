@@ -1,0 +1,49 @@
+[workspace]
+resolver = "2"
+default-members = ["crates/app"]
+members = [
+    "crates/atk-protocol",
+    "crates/hid",
+    "crates/device",
+    "crates/profile",
+    "crates/storage",
+    "crates/macro-engine",
+    "crates/core",
+    "crates/vxectl",
+    "crates/app",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/LilRaime/open-atk"
+
+[workspace.dependencies]
+atk-protocol = { path = "crates/atk-protocol" }
+atk-hid = { path = "crates/hid" }
+atk-device = { path = "crates/device" }
+atk-profile = { path = "crates/profile" }
+atk-storage = { path = "crates/storage" }
+atk-macro-engine = { path = "crates/macro-engine" }
+atk-core = { path = "crates/core" }
+
+thiserror = "2.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+hidapi = "2.6"
+tokio = { version = "1.40", features = ["rt-multi-thread", "macros", "time", "sync"] }
+clap = { version = "4.5", features = ["derive"] }
+eframe = "0.30"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
+
+

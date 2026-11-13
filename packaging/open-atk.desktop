@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=OpenATK
+Comment=Native Cross-Platform Hardware Configuration for ATK and VXE Gaming Mice
+Exec=open-atk
+Icon=open-atk
+Terminal=false
+Type=Application
+Categories=Utility;HardwareSettings;Settings;
+StartupNotify=true

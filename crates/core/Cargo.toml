@@ -1,0 +1,16 @@
+[package]
+name = "atk-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+atk-protocol.workspace = true
+atk-hid.workspace = true
+atk-device.workspace = true
+atk-profile.workspace = true
+atk-storage.workspace = true
+atk-macro-engine.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+

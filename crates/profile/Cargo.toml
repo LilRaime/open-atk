@@ -1,0 +1,11 @@
+[package]
+name = "atk-profile"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+atk-protocol = { workspace = true, features = ["serde"] }
+serde.workspace = true
+thiserror.workspace = true
+
